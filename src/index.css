@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Tomorrow:wght@700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-tomorrow: "Tomorrow", sans-serif;
+}
+
+body {
+  background-color: #F8F9F3; /* Pale yellow/greenish in light mode */
+  color: #111111;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark, html.dark body {
+  background-color: #0b0d13;
+  color: #f1f5f9;
+}
+
+/* Custom tactile, high-contrast scrollbar for text inside cards */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #e5e7eb;
+}
+
+html.dark .custom-scrollbar {
+  scrollbar-color: #71717a #1e2230;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f2f6;
+  border-left: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #161922;
+  border-left: 1px solid #272a38;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 4px;
+  border: 1px solid #374151;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #111827;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #71717a;
+  border: 1px solid #52525b;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #e4e4e7;
+}
+
+/* Subtle dot pattern */
+.dot-grid {
+  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+html.dark .dot-grid {
+  background-image: radial-gradient(#262a36 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
